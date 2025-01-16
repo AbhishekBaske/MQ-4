@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQ-4 Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+            color: #2e7d32;
+        }
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2e7d32;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #dcedc8;
+        }
+        tr:nth-child(odd) {
+            background-color: #f1f8e9;
+        }
+        tr:hover {
+            background-color: #a5d6a7;
+            cursor: pointer;
+        }
+        th, td {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        td {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>MQ-4 Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Message</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item._id }}</td>
+                <td>{{ item.message }}</td>
+                <td>{{ item.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
